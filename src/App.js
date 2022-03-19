@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
-import { SafeAreaView, StyleSheet, Text, Alert } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import Header from '../components/Header';
 import ModalWelcome from '../components/Modal';
-
+import MainStack from '../navigation/MainStack';
 
 const App = () => {
 
@@ -22,8 +21,8 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <Text>BUENA PANTALLA</Text>
       {content}
+      <MainStack />
     </SafeAreaView>
   );
 };
