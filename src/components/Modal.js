@@ -11,7 +11,7 @@ const ModalWelcome = (props) => {
             <View style={styles.container}>
                 <ImageBackground
                     style={styles.imageBackground}
-                    source={require('../assets/komputerWillkommen.jpg')}>
+                    source={require('../../assets/komputerWillkommen.jpg')}>
 
                     <View style={styles.modalTitle}>
                         <Text style={styles.modalHeader}>BIENVENIDOS !!!</Text>

@@ -1,10 +1,10 @@
-## _Clase 9 Desarrollo de Aplicaciones_
+## _Clase 10 Desarrollo de Aplicaciones_
 
 ## Detalle 
-Cumpliendo con el desafio propuesto, se emplean navegaciones entre pantallas utilizando `buttons` y sus importaciones.
+
 
 ## _Creacion de maquetado_
-se adjunta archivo de maquetado con Adode XD: `devapp-clase9`
+se adjunta archivo de maquetado con Adode XD: `devapp-clase10`
 
 ```sh
 Se insertan imagenes en Header.
