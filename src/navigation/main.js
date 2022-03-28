@@ -5,6 +5,7 @@ import Home from '../screens/home/index'
 import Category from '../screens/category/index'
 import Product from '../screens/product/index'
 import { colors } from '../constants/themes';
+import { BottomTab } from './BottomTabs';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,13 +27,16 @@ const MainNavigator = () => {
             <Stack.Screen
                 name='Home'
                 component={Home}
-                options={{ headerShown: false }} 
+                options={{ headerShown: false }}
             />
             <Stack.Screen name='Category'
                 component={Category}
-                options={({route}) => ({ title: route.params.name })}
+                options={({ route }) => ({ title: route.params.name })}
             />
-            <Stack.Screen name='Product' component={Product} options={({route}) => ({ title: route.params.name })} />
+            <Stack.Screen name='Product'
+                component={Product}
+                options={({ route }) => ({ title: route.params.name })}
+            />
         </Stack.Navigator>
     )
 }

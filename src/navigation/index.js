@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { View } from "react-native"
 import { NavigationContainer } from '@react-navigation/native';
 import MainNavigator from './main';
 import ModalWelcome from "../components/Modal"
 import Header from '../components/Header';
-
 
 const AppNavigation = () => {
 
@@ -15,7 +15,7 @@ const AppNavigation = () => {
     useEffect(() => {
         setTimeout(() => {
             content = setModalVisible(true)
-        }, 4000);
+        }, 3000);
     }, []);
 
     return (

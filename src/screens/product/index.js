@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { View, Text, Button, Image } from 'react-native'
+import { View, Text, Button, Image, TouchableOpacity, ToastAndroid } from 'react-native'
 import { colors } from '../../constants/themes';
 import { styles } from './styles'
 
@@ -14,8 +14,17 @@ const Products = ({ navigation, route }) => {
             <Text style={styles.text_name}>{name}</Text>
             <Text style={styles.text}>{description}</Text>
             <Text style={styles.text_price}>Precio: ${price}</Text>
-            
-            <Button title="HACER NADA" onPress={() => null} color={colors.buttonColor}/>
+            <View style={styles.containerButtons}>
+            <TouchableOpacity
+                style={styles.buttonOpacity}
+                onPress={() => {
+                    ToastAndroid.show('Producto Disponible', 2000);
+                }}
+            >
+                <Text style={styles.buttonText}>Info</Text>
+            </TouchableOpacity>
+            <Button title="HACER NADA" onPress={() => null} color={colors.buttonColor} />
+            </View>
         </View>
     )
 }

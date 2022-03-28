@@ -21,5 +21,20 @@ export const styles = StyleSheet.create({
     image: {
         height: 300,
         width: 300,
+    },
+    buttonOpacity: {
+        backgroundColor: '#576574',
+        paddingVertical: 15,
+        paddingHorizontal: 20,
+        borderRadius: 4,
+    },
+    buttonText : {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 14
+    },
+    containerButtons: {
+        flexDirection: 'row',
+        alignItems:"center"
     }
 })
