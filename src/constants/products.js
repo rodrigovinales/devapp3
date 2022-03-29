@@ -5,7 +5,7 @@ export const PRODUCTS = [
         name: 'Teclado Genius Negro',
         description: 'Teclado Genius Negro Mecanico 101 teclas conteniendo teclado numerico',
         price: 10,
-        src: require ("../../assets/pictures/tecladoGenius.jpg")
+        src: require ("../../assets/pictures/tecladoGenius.png")
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ export const PRODUCTS = [
         name: 'Teclado Mecanico Genius',
         description: 'Teclado Mecanico con teclas ruidosas',
         price: 15,
-        src: require ("../../assets/pictures/tecladoGenius2.jpg")
+        src: require ("../../assets/pictures/tecladoGenius2.png")
     },
     {
         id: 3,
@@ -37,15 +37,15 @@ export const PRODUCTS = [
         name: 'Cartucho Negro 135',
         description: 'Cartucho Negro Espon 135 Original',
         price: 15,
-        src: require ("../../assets/pictures/cartucho135.jpg")
+        src: require ("../../assets/pictures/epson135.png")
     },
     {
         id: 6,
-        category: 3,
-        name: 'Cartucho Color Epson 135',
-        description: 'Cartucho Color Epson 135 Original',
+        category: 6,
+        name: 'Disco Externo Seagate',
+        description: 'Disco Externo 1tb de capacidad, conector USB 3.0. Para guardado de informacion',
         price: 20,
-        src: require ("../../assets/pictures/epson135.png")
+        src: require ("../../assets/pictures/discoexterno.png")
     },
     {
         id: 7,
@@ -53,7 +53,7 @@ export const PRODUCTS = [
         name: 'Mother Asus G410',
         description: 'Mother Asus G410',
         price: 15,
-        // src: require ("../../assets/pictures/mothergah.jpg")
+        src: require ("../../assets/pictures/motherg410.png")
     },
     {
         id: 8,
@@ -61,6 +61,6 @@ export const PRODUCTS = [
         name: 'Mother Asus AURUS',
         description: 'Mother Asus AURUS Gamer Pro',
         price: 20,
-        // src: require ("../../assets/pictures/MotherB365MA.jpg")
+        src: require ("../../assets/pictures/365mother.png")
     },
 ]

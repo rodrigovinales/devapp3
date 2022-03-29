@@ -18,6 +18,12 @@ export const styles = StyleSheet.create({
         marginVertical: 20,
         fontFamily: "Montserrat-Regular"
     },
+    text_description: {
+        fontSize: 14,
+        textAlign: 'center',
+        marginVertical: 20,
+        fontFamily: "Montserrat-Regular"
+    },
     image: {
         height: 300,
         width: 300,
@@ -28,13 +34,13 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 4,
     },
-    buttonText : {
+    buttonText: {
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 14
     },
     containerButtons: {
         flexDirection: 'row',
-        alignItems:"center"
+        alignItems: "center"
     }
 })

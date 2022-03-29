@@ -4,12 +4,22 @@ import { styles } from './styles'
 import { PRODUCTS } from '../../constants/products'
 import CategoryProducts from '../../components/categories/category-products'
 import LoaderSpinner from '../../components/Loader'
+import { useSelector, useDispatch, connect } from 'react-redux'
+import { filteredProducts, selectProduct } from '../../store/actions/product.action'
+
+
 
 const Category = ({ navigation, route }) => {
-    const { id } = route.params;
-    const selectedCategory = PRODUCTS.filter(product => product.category === id);
+    // const { id } = route.params;
+    // const selectedCategory = PRODUCTS.filter(product => product.category === id);
+
+    const dispatch = useDispatch();
+    const categoryProduct = useSelector(state => state.products.filteredProducts);
+    const selectedCategory = useSelector(state => state.categories.selectedCategory);
+
     const handleSelectCategory = (product) => {
-        navigation.navigate('Product', { product, name: product.name })
+        dispatch(selectProduct(product.id));
+        navigation.navigate('Product', { name: product.name })
     }
     const renderItem = ({ item }) => <CategoryProducts item={item} onSelected={handleSelectCategory} />
 
@@ -25,11 +35,16 @@ const Category = ({ navigation, route }) => {
         }, 2000);
     }, []);
 
+    useEffect(() => {
+        dispatch(filteredProducts(selectedCategory.id));
+    }, [])
+
+
     return (
         <View style={styles.container}>
             {content}
             <FlatList
-                data={selectedCategory}
+                data={categoryProduct}
                 keyExtractor={item => item.id}
                 renderItem={renderItem}
             />
@@ -38,4 +53,4 @@ const Category = ({ navigation, route }) => {
     )
 }
 
-export default Category
+export default connect()(Category)

@@ -43,5 +43,8 @@ export const styles = StyleSheet.create({
         fontFamily: 'Montserrat-Regular',
         fontSize: 24,
         color: '#000000'
+    },
+    empty: {
+        backgroundColor: "red"
     }
 })

@@ -9,7 +9,7 @@ const Header = () => {
 
             <Image
                 style={styles.tinyLogo}
-                source={require('../../assets/computerikone.jpg')}
+                source={require('../../assets/computerikone.png')}
             />
             <Text style={styles.text}>KOMPUTEKNIKEN</Text>
         </View>

@@ -26,4 +26,16 @@ export const CATEGORIES = [
         color: '#54DEFD',
         description: 'MOTHERS'
     },
+    {
+        id: 5,
+        name: 'PAD MOUSES',
+        color: '#B18183',
+        description: 'PAD MOUSES'
+    },
+    {
+        id: 6,
+        name: 'DISCO EXTERNO',
+        color: '#BED8D7',
+        description: 'MOTHERS'
+    },
 ]
