@@ -16,9 +16,6 @@ const ModalWelcome = (props) => {
                     <View style={styles.modalTitle}>
                         <Text style={styles.modalHeader}>BIENVENIDOS !!!</Text>
                     </View>
-                    <View>
-                        <Text style={styles.modalMessage}>Aqui podras ver nuestros productos..</Text>
-                    </View>
                 </ImageBackground>
             </View>
         </Modal>
@@ -42,7 +39,7 @@ const styles = StyleSheet.create({
     },
     modalHeader: {
         fontSize: 48,
-        color: "#F0A6AD",
+        color: "#CCC",
         marginBottom: 40,
         fontFamily : "Montserrat-Regular"
     },

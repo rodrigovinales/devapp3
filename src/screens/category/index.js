@@ -9,6 +9,7 @@ import { filteredProducts, selectProduct } from '../../store/actions/product.act
 
 
 
+
 const Category = ({ navigation, route }) => {
     // const { id } = route.params;
     // const selectedCategory = PRODUCTS.filter(product => product.category === id);

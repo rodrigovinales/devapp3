@@ -5,14 +5,14 @@ import Home from '../screens/home/index'
 import Category from '../screens/category/index'
 import Product from '../screens/product/index'
 import { colors } from '../constants/themes';
-import { BottomTab } from './BottomTabs';
+import Welcome from '../screens/welcome';
 
 const Stack = createNativeStackNavigator();
 
 const MainNavigator = () => {
     return (
         <Stack.Navigator
-            initialRouteName='Home'
+            initialRouteName='welcome'
             screenOptions={{
                 headerStyle: {
                     backgroundColor: Platform.OS === 'android' ? colors.primaryColor : '',
@@ -24,6 +24,11 @@ const MainNavigator = () => {
                 }
             }}
         >
+            <Stack.Screen
+                name='welcome'
+                component={Welcome}
+                options={{ headerShown: false }}
+            />
             <Stack.Screen
                 name='Home'
                 component={Home}
