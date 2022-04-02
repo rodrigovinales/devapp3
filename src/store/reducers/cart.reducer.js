@@ -1,6 +1,7 @@
 import { cartTypes } from "../types/cart.types";
+import { Alert} from "react-native";
 
-const { ADD_ITEM, REMOVE_ITEM, COMFIRM_CART } = cartTypes;
+const { ADD_ITEM, REMOVE_ITEM, COMFIRM_CART, EMPTY_CART } = cartTypes;
 
 const initialState = {
     items: [],
@@ -12,6 +13,10 @@ const sumTotal = (list) => list.map(item => item.quantity * item.price).reduce((
 const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_ITEM:
+
+                Alert.alert('Producto Agregado al carrito !!!');
+              
+
             const indexItem = state.items.findIndex(item => item.id === action.item.id);
             if(indexItem === -1) {
                 const item = {...action.item, quantity: 1};
@@ -41,6 +46,9 @@ const cartReducer = (state = initialState, action) => {
             }
         case COMFIRM_CART:
             return state;
+        case EMPTY_CART:
+            const emptyCart = { items: [], total: 0}
+            return emptyCart;
         default:
             return state;
     }

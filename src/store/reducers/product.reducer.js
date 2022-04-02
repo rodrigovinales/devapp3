@@ -1,17 +1,3 @@
-// import { PRODUCTS } from "../../constants/products";
-
-// const initialState = {
-//     products: PRODUCTS,
-//     filteredProducts: [],
-//     selectedProduct: null
-// }
-
-// const productReducer = (state = initialState, action) => {
-//     return state;
-// }
-
-// export default productReducer;
-
 import { PRODUCTS } from '../../constants/products';
 import { productTypes } from "../types/product.types";
 const { SELECT_PRODUCT, FILTERED_PRODUCTS } = productTypes;

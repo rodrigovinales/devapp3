@@ -1,26 +1,43 @@
 import React from "react";
 import { StyleSheet, Text, Modal, View, ImageBackground } from "react-native";
 
-const ModalWelcome = (props) => {
-    const { visible } = props;
+const ModalAll = (props) => {
+    const { visible, text, imagen } = props;
 
     if (!visible) return null;
 
     return (
+        // <Modal animationType="slide" visible={visible}>
+        //     <View style={styles.container}>
+        //         <ImageBackground
+        //             style={styles.imageBackground}
+        //             source={require('../../assets/komputerWillkommen.jpg')}>
+
+        //             <View style={styles.modalTitle}>
+        //                 <Text style={styles.modalHeader}>BIENVENIDOS !!!</Text>
+        //             </View>
+        //         </ImageBackground>
+        //     </View>
+        // </Modal>
+
         <Modal animationType="slide" visible={visible}>
             <View style={styles.container}>
                 <ImageBackground
                     style={styles.imageBackground}
-                    source={require('../../assets/komputerWillkommen.jpg')}>
+                    source={imagen}
+                    >
 
                     <View style={styles.modalTitle}>
-                        <Text style={styles.modalHeader}>BIENVENIDOS !!!</Text>
+                        <Text style={styles.modalHeader}>
+                            {text}
+                        </Text>
                     </View>
                 </ImageBackground>
             </View>
         </Modal>
     )
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -41,7 +58,7 @@ const styles = StyleSheet.create({
         fontSize: 48,
         color: "#CCC",
         marginBottom: 40,
-        fontFamily : "Montserrat-Regular"
+        fontFamily: "Montserrat-Regular"
     },
     modalMessage: {
         fontSize: 38,
@@ -50,8 +67,8 @@ const styles = StyleSheet.create({
         textAlign: "center",
         justifyContent: "center",
         alignItems: "center",
-        fontFamily : "SmoochSans-Medium"
+        fontFamily: "SmoochSans-Medium"
     }
 })
 
-export default ModalWelcome;
+export default ModalAll;

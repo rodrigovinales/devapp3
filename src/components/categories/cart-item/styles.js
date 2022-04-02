@@ -5,10 +5,11 @@ export const styles = StyleSheet.create({
         flex: 1,
     },
     header: {
-        fontFamily: "OpenSans-Bold",
+        fontFamily: "Montserrat-Regular",
     },
     name: {
-        fontSize: 20,
+        fontSize: 18,
+        fontFamily: "Montserrat-Regular",
         color: '#212121'
     },
     details: {
@@ -20,11 +21,11 @@ export const styles = StyleSheet.create({
     },
     quantity: {
         fontSize: 16,
-        fontFamily: 'OpenSans-Regular',
+        fontFamily: 'Montserrat-Regular',
     },
     price: {
         fontSize: 16,
-        fontFamily: 'OpenSans-Regular',
+        fontFamily: 'Montserrat-Regular',
         color: '#212121'
     },
 });

@@ -1,7 +1,8 @@
+
 import { URL_API } from "../../Utils/Databases"
 import { cartTypes } from "../types/cart.types"
 
-const { ADD_ITEM, REMOVE_ITEM, COMFIRM_CART } = cartTypes;
+const { ADD_ITEM, REMOVE_ITEM, COMFIRM_CART, EMPTY_CART } = cartTypes;
 
 export const addItem = (item) => ({
     type: ADD_ITEM,
@@ -12,6 +13,11 @@ export const removeItem = (id) => ({
     type: REMOVE_ITEM,
     id
 });
+
+export const emptyCart = (item) => ({
+    type: EMPTY_CART,
+    item
+})
 
 export const confirmCart = (cart, total) => {
     return async dispatch => {
