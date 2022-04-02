@@ -1,7 +1,6 @@
 import React from 'react';
 import AppNavigation from './navigation/index';
 import { Provider } from 'react-redux';
-import AuthScreen from "./screens/users/AuthScreen"
 
 
 
@@ -11,9 +10,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <AppNavigation />
-    </Provider>
-    // <AuthScreen/>
-    
+    </Provider>    
   );
 };
 

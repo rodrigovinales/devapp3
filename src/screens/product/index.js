@@ -3,14 +3,21 @@ import { View, Text, Button, Image, TouchableOpacity, ToastAndroid } from 'react
 // import Toast from 'react-native-toast-message';
 import { colors } from '../../constants/themes';
 import { styles } from './styles'
-import { useSelector, connect } from 'react-redux';
+import { useSelector, connect, useDispatch } from 'react-redux';
+
+import { addItem } from "../../store/actions/cart.action"
+
+
 
 
 const Products = ({ navigation, route }) => {
     // const { product } = route.params;
+    
+    const dispatch = useDispatch();
     const product = useSelector(state => state.products.selectedProduct);
-
     const { name, description, price, src } = product;
+
+    const handleAddToCart = () => dispatch(addItem(product));
 
     return (
         <View style={styles.container}>
@@ -27,6 +34,10 @@ const Products = ({ navigation, route }) => {
                 >
                 <Text style={styles.buttonText}>Info</Text>
             </TouchableOpacity>
+            <Button title="Order now" onPress={() => handleAddToCart()} color={colors.primaryColor}/>
+            <View style={styles.cartButton}>
+                <Button title="Cart" onPress={() => navigation.navigate('Cart')} color='#212121'/>
+            </View>
             {/* <Button title="HACER NADA" onPress={() => null} color={colors.buttonColor} /> */}
             </View>
         </View>
