@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { View, FlatList, ActivityIndicator } from 'react-native'
+import { View, FlatList } from 'react-native'
 import { styles } from './styles'
-import { PRODUCTS } from '../../constants/products'
+// import { PRODUCTS } from '../../constants/products'
 import CategoryProducts from '../../components/categories/category-products'
 import LoaderSpinner from '../../components/Loader'
 import { useSelector, useDispatch, connect } from 'react-redux'
 import { filteredProducts, selectProduct } from '../../store/actions/product.action'
-
-
-
 
 const Category = ({ navigation, route }) => {
     // const { id } = route.params;
@@ -25,11 +22,8 @@ const Category = ({ navigation, route }) => {
     const renderItem = ({ item }) => <CategoryProducts item={item} onSelected={handleSelectCategory} />
 
     let content;
-
     const [Loader, setLoader] = useState(false)
-
     content = <LoaderSpinner visible={!Loader} />
-
     useEffect(() => {
         setTimeout(() => {
             content = setLoader(true)

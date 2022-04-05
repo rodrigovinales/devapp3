@@ -6,7 +6,7 @@ import Category from '../screens/category/index'
 import Product from '../screens/product/index'
 import Cart from "../screens/cart/index"
 import { colors } from '../constants/themes';
-import Welcome from '../screens/welcome';
+import Welcome from '../screens/login/index';
 
 const Stack = createNativeStackNavigator();
 
