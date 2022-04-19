@@ -102,18 +102,10 @@
 
 import React from 'react';
 import { styles } from './styles'
-import {
-  Text,
-  View,
-  TextInput,
-  Image,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  Keyboard,
-} from 'react-native';
+import { Text, View, TextInput, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView } from 'react-native';
 import Icon from 'react-native-ionicons'
 
-export default function Welcome() {
+ const Welcome = ({navigation}) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
@@ -123,13 +115,13 @@ export default function Welcome() {
           <View style={styles.authBox}>
             <View style={styles.logoBox}>
               <Icon
-                color='#fff'
+                color='#000'
                 name='person'
                 type='font-awesome'
-                size={50}
+                size={80}
               />
             </View>
-            <Text style={styles.loginTitleText}>Login</Text>
+            <Text style={styles.loginTitleText}>Ingreso</Text>
             <View style={styles.hr}></View>
             <View style={styles.inputBox}>
               <Text style={styles.inputLabel}>Email</Text>
@@ -167,3 +159,5 @@ export default function Welcome() {
     </TouchableWithoutFeedback>
   );
 }
+
+export default Welcome

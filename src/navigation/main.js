@@ -1,50 +1,67 @@
 import React from 'react';
 import { Platform } from 'react-native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Home from '../screens/home/index'
-import Category from '../screens/category/index'
-import Product from '../screens/product/index'
-import Cart from "../screens/cart/index"
-import { colors } from '../constants/themes';
-import Welcome from '../screens/login/index';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import CartNavigator from './cart';
+import OrderNavigator from './order';
+import ShopNavigator from './shop';
+import Icon from 'react-native-ionicons'
 
-const Stack = createNativeStackNavigator();
+
+
+const TabStack = createBottomTabNavigator();
 
 const MainNavigator = () => {
     return (
-        <Stack.Navigator
-            initialRouteName='welcome'
+        <TabStack.Navigator
+            initialRouteName='Shop'
             screenOptions={{
-                headerStyle: {
-                    backgroundColor: Platform.OS === 'android' ? colors.primaryColor : '',
-                },
-                headerTintColor: Platform.OS === 'android' ? 'white' : colors.primaryColor,
-                headerTitleStyle: {
-                    fontFamily: 'OpenSans-Bold',
-                    fontSize: 17
-                }
+                headerShown: false,
             }}
         >
-            <Stack.Screen
-                name='welcome'
-                component={Welcome}
-                options={{ headerShown: false }}
+            <TabStack.Screen
+                name='Shop'
+                component={ShopNavigator}
+                options={{
+                    tabBarIcon: () => (
+                        <Icon
+                            color='blue'
+                            name='home'
+                            size={40}
+                        />
+                    ),
+                    title: 'Inicio',
+                }}
             />
-            <Stack.Screen
-                name='Home'
-                component={Home}
-                options={{ headerShown: false }}
+            <TabStack.Screen
+                name='Cart'
+                component={CartNavigator}
+                options={{
+                    tabBarIcon: () => (
+                        <Icon
+                            color='red'
+                            name='cart'
+                            size={40}
+                        />
+                    ),
+                    title: 'Carrito',
+                }}
             />
-            <Stack.Screen name='Category'
-                component={Category}
-                options={({ route }) => ({ title: route.params.name })}
+            <TabStack.Screen
+                name='Order'
+                component={OrderNavigator}
+                options={{
+                    tabBarIcon: () => (
+                        <Icon
+                            color='green'
+                            name='list'
+                            size={40}
+                        />
+                    ),
+                    title: 'Ordenes',
+                }}
             />
-            <Stack.Screen name='Product'
-                component={Product}
-                options={({ route }) => ({ title: route.params.name })}
-            />
-            <Stack.Screen name='Cart' component={Cart} />
-        </Stack.Navigator>
+
+        </TabStack.Navigator>
     )
 }
 

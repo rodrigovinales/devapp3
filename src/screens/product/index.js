@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Button, Image } from 'react-native'
+import { View, Text, Button, Image, ScrollView } from 'react-native'
 import { colors } from '../../constants/themes';
 import { styles } from './styles'
 import { useSelector, connect, useDispatch } from 'react-redux';
@@ -17,18 +17,18 @@ const Products = ({ navigation, route }) => {
 
     return (
 
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <Image style={styles.image} source={src} />
             <Text style={styles.text_name}>{name}</Text>
             <Text style={styles.text_description}>{description}</Text>
             <Text style={styles.text_price}>Precio: ${price}</Text>
             <View style={styles.containerButtons}>
                 <Button title="Agregar a Carrito" onPress={() => handleAddToCart()} color={colors.buttonColor} />
-                <View style={styles.cartButton}>
+                {/* <View style={styles.cartButton}>
                     <Button title="Ir a Carrito" onPress={() => navigation.navigate('Cart')} color='#212121' />
-                </View>
+                </View> */}
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
